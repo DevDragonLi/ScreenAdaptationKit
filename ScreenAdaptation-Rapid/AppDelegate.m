@@ -1,13 +1,13 @@
 //
 //  AppDelegate.m
-//  ceshi
+//  ScreenAdaptation-Rapid
 //
 //  Created by DragonLi on 15/11/14.
 //  Copyright © 2015年 李夫龙. All rights reserved.
 //
 
 #import "AppDelegate.h"
-
+#import "LFLMainViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -15,6 +15,10 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    _window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:[LFLMainViewController new]];
+    _window.rootViewController = nav;
+    [_window makeKeyAndVisible];
     return YES;
 }
 
