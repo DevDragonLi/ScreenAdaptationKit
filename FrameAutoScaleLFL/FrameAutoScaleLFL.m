@@ -116,10 +116,6 @@ static bool isFirstAccess = YES;
 /**
  setting a view Frame With the UIfigure number special CGRectGetX
  */
-/**
- setting a view Frame With the UIfigure number special CGRectGetX
- */
-
 + (CGRect)CGLFLMakeX:(CGFloat) x CGRectGetY:(CGFloat) GetY width:(CGFloat) width height:(CGFloat) height{
     CGFloat CGRectGetY = [FrameAutoScaleLFL sharedFrameAutoScaleLFL].autoSizeScaleY;
     return CGLFLMake(x, GetY / CGRectGetY, width, height);
@@ -128,10 +124,11 @@ static bool isFirstAccess = YES;
  返回正常处理通过CGRectGetX方式的frame(其他均正常)
  */
 
-+ (CGRect)CGLFLGetX:(CGFloat) GetX Y:(CGFloat) y  width:(CGFloat) width height:(CGFloat)heigh{
++ (CGRect)CGLFLMakeX:(CGFloat) x CGRectGetX:(CGFloat) GetX width:(CGFloat) width height:(CGFloat) height{
     CGFloat CGRectGetX = [FrameAutoScaleLFL sharedFrameAutoScaleLFL].autoSizeScaleX;
-    return CGLFLMake(GetX / CGRectGetX, y, width, heigh);
+    return CGLFLMake(x, GetX / CGRectGetX, width, height);
 }
+
 /**
  setting a view Frame With the UIfigure number special height eg: 64  always 64 Value
  */

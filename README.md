@@ -1,6 +1,6 @@
 # ScreenAdaptation-Rapid- DragonLi
 
-## 2016年2月19更新简介
+## 2016年2月19-21更新简介
 ###1. 增加如果布局中有涉及设置导航栏和使用CGRectGetMaxY() CGRectGetMaxX等导致再次缩放的问题,提供新API方法,eg:长文本无法获取具体Y点,需要通过CGRectGetMaxY()方式,如果使用之前方法,会导致y数值二次缩放,导致出错.代码调整,便于查看demo
 ```objc
 /**

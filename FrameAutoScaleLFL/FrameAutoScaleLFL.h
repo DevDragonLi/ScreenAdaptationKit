@@ -76,7 +76,7 @@ static const float RealUISrceenWidth = 375.0;
 /**
  setting a view Frame With the UIfigure number special CGRectGetX
  */
-+ (CGRect)CGLFLGetX:(CGFloat) GetX Y:(CGFloat) y  width:(CGFloat) width height:(CGFloat) height;
++ (CGRect)CGLFLMakeX:(CGFloat) x CGRectGetX:(CGFloat) GetX width:(CGFloat) width height:(CGFloat) height;
 /**
  setting a view Frame With the UIfigure number special height eg: 64  always 64 Value
  */

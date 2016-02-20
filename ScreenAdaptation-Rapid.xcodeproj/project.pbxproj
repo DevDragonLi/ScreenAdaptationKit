@@ -11,11 +11,11 @@
 		4337B1DF1C51D470007CDB1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4337B1D41C51D470007CDB1C /* Assets.xcassets */; };
 		4337B1E01C51D470007CDB1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4337B1D61C51D470007CDB1C /* LaunchScreen.storyboard */; };
 		4337B1E11C51D470007CDB1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4337B1D81C51D470007CDB1C /* Main.storyboard */; };
-		4337B1E21C51D470007CDB1C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4337B1DA1C51D470007CDB1C /* Info.plist */; };
 		4337B1E31C51D470007CDB1C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4337B1DB1C51D470007CDB1C /* main.m */; };
-		4337B1E81C51D4AC007CDB1C /* FrameAutoScaleLFL.m in Sources */ = {isa = PBXBuildFile; fileRef = 4337B1E71C51D4AC007CDB1C /* FrameAutoScaleLFL.m */; };
 		4337B1EF1C520053007CDB1C /* LFLMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4337B1ED1C520053007CDB1C /* LFLMainViewController.m */; };
 		43B76DA91C53B8A900DCFA3D /* testXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43B76DA71C53B8A900DCFA3D /* testXib.xib */; };
+		43F57F571C78D31100AFC2DC /* FrameAutoScaleLFL.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F57F561C78D31100AFC2DC /* FrameAutoScaleLFL.m */; };
+		43F57F591C78D3E300AFC2DC /* info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43F57F581C78D3E300AFC2DC /* info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,13 +24,13 @@
 		4337B1D41C51D470007CDB1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "ScreenAdaptation-Rapid/Assets.xcassets"; sourceTree = SOURCE_ROOT; };
 		4337B1D71C51D470007CDB1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4337B1D91C51D470007CDB1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
-		4337B1DA1C51D470007CDB1C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "ScreenAdaptation-Rapid/Info.plist"; sourceTree = SOURCE_ROOT; };
 		4337B1DB1C51D470007CDB1C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "ScreenAdaptation-Rapid/main.m"; sourceTree = SOURCE_ROOT; };
-		4337B1E61C51D4AC007CDB1C /* FrameAutoScaleLFL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrameAutoScaleLFL.h; sourceTree = "<group>"; };
-		4337B1E71C51D4AC007CDB1C /* FrameAutoScaleLFL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrameAutoScaleLFL.m; sourceTree = "<group>"; };
 		4337B1ED1C520053007CDB1C /* LFLMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LFLMainViewController.m; path = "ScreenAdaptation-Rapid/LFLMainViewController.m"; sourceTree = SOURCE_ROOT; };
 		4337B1EE1C520053007CDB1C /* LFLMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LFLMainViewController.h; path = "ScreenAdaptation-Rapid/LFLMainViewController.h"; sourceTree = SOURCE_ROOT; };
 		43B76DA71C53B8A900DCFA3D /* testXib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = testXib.xib; path = "ScreenAdaptation-Rapid/testXib.xib"; sourceTree = SOURCE_ROOT; };
+		43F57F551C78D31100AFC2DC /* FrameAutoScaleLFL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrameAutoScaleLFL.h; sourceTree = "<group>"; };
+		43F57F561C78D31100AFC2DC /* FrameAutoScaleLFL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrameAutoScaleLFL.m; sourceTree = "<group>"; };
+		43F57F581C78D3E300AFC2DC /* info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = info.plist; path = "ScreenAdaptation-Rapid/info.plist"; sourceTree = SOURCE_ROOT; };
 		87725DB81BF6513A00BD3569 /* ScreenAdaptation-Rapid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ScreenAdaptation-Rapid.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -58,8 +58,8 @@
 		4337B1E51C51D4AC007CDB1C /* FrameAutoScaleLFL */ = {
 			isa = PBXGroup;
 			children = (
-				4337B1E61C51D4AC007CDB1C /* FrameAutoScaleLFL.h */,
-				4337B1E71C51D4AC007CDB1C /* FrameAutoScaleLFL.m */,
+				43F57F551C78D31100AFC2DC /* FrameAutoScaleLFL.h */,
+				43F57F561C78D31100AFC2DC /* FrameAutoScaleLFL.m */,
 			);
 			path = FrameAutoScaleLFL;
 			sourceTree = SOURCE_ROOT;
@@ -114,9 +114,9 @@
 		87725DBB1BF6513A00BD3569 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				43F57F581C78D3E300AFC2DC /* info.plist */,
 				4337B1D41C51D470007CDB1C /* Assets.xcassets */,
 				4337B1D51C51D470007CDB1C /* Base.lproj */,
-				4337B1DA1C51D470007CDB1C /* Info.plist */,
 				4337B1DB1C51D470007CDB1C /* main.m */,
 			);
 			name = "Supporting Files";
@@ -180,7 +180,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4337B1E21C51D470007CDB1C /* Info.plist in Resources */,
+				43F57F591C78D3E300AFC2DC /* info.plist in Resources */,
 				4337B1E11C51D470007CDB1C /* Main.storyboard in Resources */,
 				43B76DA91C53B8A900DCFA3D /* testXib.xib in Resources */,
 				4337B1DF1C51D470007CDB1C /* Assets.xcassets in Resources */,
@@ -195,8 +195,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43F57F571C78D31100AFC2DC /* FrameAutoScaleLFL.m in Sources */,
 				4337B1EF1C520053007CDB1C /* LFLMainViewController.m in Sources */,
-				4337B1E81C51D4AC007CDB1C /* FrameAutoScaleLFL.m in Sources */,
 				4337B1E31C51D470007CDB1C /* main.m in Sources */,
 				4337B1DE1C51D470007CDB1C /* AppDelegate.m in Sources */,
 			);
