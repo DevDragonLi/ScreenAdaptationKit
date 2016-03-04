@@ -1,21 +1,43 @@
 # ScreenAdaptation-Rapid- DragonLi
+## 2016年3.5号更新
+###1. 修正部分接口
+###2. 减少代码多余的框架,演示代码修改.
 
 ## 2016年2月19-21更新简介
 ###1. 增加如果布局中有涉及设置导航栏和使用CGRectGetMaxY() CGRectGetMaxX等导致再次缩放的问题,提供新API方法,eg:长文本无法获取具体Y点,需要通过CGRectGetMaxY()方式,如果使用之前方法,会导致y数值二次缩放,导致出错.代码调整,便于查看demo
 ```objc
 /**
-1. 针对设置导航栏 64 Y (不可以缩放情况使用这个) specially for height
-setting a view Frame With the UIfigure number special height eg: 64  always 64 Value
+#pragma mark  
+1.1普通使用 以下测试。请切换模拟器查看打印数据对比 是否等比例缩放 iPhone4s -6sPlus 如果公司UI图是以iphone6为基准, 直接写UI图上的坐标即可,如果其他尺寸,进入FrameAutoScaleLFL.h文件头文件修改RealUISrceenHight 和RealUISrceenWidth 为其他尺寸即可.
+/**
+1.1 Eg: [FrameAutoScaleLFL CGLFLMakeX:30 Y:300 width:200 height:40]
+setting a view Frame With the UIfigure  number  all value will be size to fit UIScreen
+全部对应数值都将按照比例缩放返回一个进过处理缩放比例的frame.
 */
-+ (CGRect)CGLFLMakeX:(CGFloat) x Y:(CGFloat) y  width:(CGFloat) width heightAllSame:(CGFloat) heightAllSame;
++ (CGRect)CGLFLMakeX:(CGFloat) x Y:(CGFloat) y width:(CGFloat) width height:(CGFloat) height;
+
 /**
 setting a view Frame With the UIfigure number special CGRectGetY
+全部对应数值都将按照比例缩放而Y参数除外的frame.eg: 获取上个控件的Y,不可以再次缩放.
 */
 + (CGRect)CGLFLMakeX:(CGFloat) x CGRectGetY:(CGFloat) GetY width:(CGFloat) width height:(CGFloat) height;
 /**
 setting a view Frame With the UIfigure number special CGRectGetX
+返回正常处理通过CGRectGetX方式的frame(其他均正常) special X eg: 20  always 20 Value
+比如控件,左边距离 屏幕20 就可以使用这个设置
 */
-+ (CGRect)CGLFLMakeX:(CGFloat) x CGRectGetX:(CGFloat) GetX width:(CGFloat) width height:(CGFloat) height;
++ (CGRect)CGLFLMakeGetX:(CGFloat)GetX Y:(CGFloat) Y width:(CGFloat) width height:(CGFloat) height;
+/**
+setting a view Frame With the UIfigure number special height eg: 64  always 64 Value
+比如导航栏的高度,一直不变,或者设置固定的高度,可以使用
+*/
++ (CGRect)CGLFLMakeX:(CGFloat) x Y:(CGFloat) y  width:(CGFloat) width heightAllSame:(CGFloat) heightAllSame;
+
+/**
+return a fullSrceen frame
+*/
++ (CGRect)CGLFLfullScreen;
+
 ```
 
 

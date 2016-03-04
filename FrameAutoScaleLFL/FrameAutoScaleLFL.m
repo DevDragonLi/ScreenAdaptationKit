@@ -5,9 +5,13 @@
  Copyright    ：  Copyright © 2015年 李夫龙. All rights reserved.
  File Content Description：
  */
-/** cell的10宽度常量  */
 
 #import "FrameAutoScaleLFL.h"
+
+@interface FrameAutoScaleLFL ()
+@property (nonatomic ,assign)float autoSizeScaleX;/**< 宽度缩放的比例  */
+@property (nonatomic ,assign)float autoSizeScaleY;/**< 高度缩放的比例  */
+@end
 
 @implementation FrameAutoScaleLFL
 
@@ -47,33 +51,6 @@ static bool isFirstAccess = YES;
     return [self sharedFrameAutoScaleLFL];
 }
 
-
-- (id)initWithAutoSizeScaleX:(float)autoSizeScaleX
-              AutoSizeScaleY:(float )autoSizeScaleY{
-    self = [super init];
-    if (self) {
-        _autoSizeScaleX = autoSizeScaleX;
-        _autoSizeScaleY = autoSizeScaleY;
-    }
-    
-    return self;
-}
-
-
-- (void)setWithAutoSizeScaleX:(float)autoSizeScaleX{
-    _autoSizeScaleX = autoSizeScaleX;
-}
-
-- (void)setWithAutoSizeScaleY:(float)autoSizeScaleY{
-    _autoSizeScaleY = autoSizeScaleY;
-}
-- (float)autoSizeScaleX{
-    return _autoSizeScaleX;
-}
-- (float)autoSizeScaleY{
-    return _autoSizeScaleY;
-}
-
 #pragma mark ----storyBorad Xib AutoLayouts
 /**
  *   storyBoard中得view自动适配
@@ -108,13 +85,15 @@ static bool isFirstAccess = YES;
 
 #pragma mark -CGRect
 /**
- 返回一个进过处理缩放比例的frame
+ setting a view Frame With the UIfigure  number  all value will be size to fit UIScreen
+ *  @return 全部对应数值都将按照比例缩放返回一个进过处理缩放比例的frame.
  */
 + (CGRect)CGLFLMakeX:(CGFloat) x Y:(CGFloat) y width:(CGFloat) width height:(CGFloat) height{
     return CGLFLMake(x, y, width, height);
 }
 /**
- setting a view Frame With the UIfigure number special CGRectGetX
+ setting a view Frame With the UIfigure number special CGRectGetY
+ 全部对应数值都将按照比例缩放而Y参数除外的frame.eg: 获取上个控件的Y,不可以再次缩放.
  */
 + (CGRect)CGLFLMakeX:(CGFloat) x CGRectGetY:(CGFloat) GetY width:(CGFloat) width height:(CGFloat) height{
     CGFloat CGRectGetY = [FrameAutoScaleLFL sharedFrameAutoScaleLFL].autoSizeScaleY;
@@ -123,20 +102,18 @@ static bool isFirstAccess = YES;
 /**
  返回正常处理通过CGRectGetX方式的frame(其他均正常)
  */
-
-+ (CGRect)CGLFLMakeX:(CGFloat) x CGRectGetX:(CGFloat) GetX width:(CGFloat) width height:(CGFloat) height{
++ (CGRect)CGLFLMakeGetX:(CGFloat)GetX Y:(CGFloat) Y width:(CGFloat) width height:(CGFloat) height{
     CGFloat CGRectGetX = [FrameAutoScaleLFL sharedFrameAutoScaleLFL].autoSizeScaleX;
-    return CGLFLMake(x, GetX / CGRectGetX, width, height);
+    return CGLFLMake(GetX / CGRectGetX, Y, width, height);
 }
-
 /**
  setting a view Frame With the UIfigure number special height eg: 64  always 64 Value
+ 比如导航栏的高度,一直不变,或者设置固定的高度,可以使用.
  */
 + (CGRect)CGLFLMakeX:(CGFloat) x Y:(CGFloat) y  width:(CGFloat) width heightAllSame:(CGFloat) heightAllSame{
     CGFloat heightValue_LFL = [FrameAutoScaleLFL sharedFrameAutoScaleLFL].autoSizeScaleY;
     return CGLFLMake(x, y, width,heightAllSame / heightValue_LFL);
 }
-
 
 /**
  返回一个全屏幕的 frame
@@ -151,6 +128,9 @@ static bool isFirstAccess = YES;
 #pragma mark CGsize
 + (CGSize)CGSizeLFLMakeWidth:(CGFloat) widthLFL hight:(CGFloat) hightLFL{
     return CGSizeLFLMake(widthLFL, hightLFL);
+}
++ (CGSize)CGSizeLFLMakeWH:(CGFloat)WH{
+    return CGSizeLFLMake(WH, WH);
 }
 + (CGSize)CGSizeLFLMakeMainScreenSize{
     return CGSizeLFLMake( RealUISrceenWidth, RealUISrceenHight);
@@ -196,9 +176,9 @@ CGSizeLFLMake(CGFloat width, CGFloat height)
     sizeLFL.height = height* LFL.autoSizeScaleY;
     return sizeLFL;
 }
-#pragma mark------计算一次缩放比例
+
+#pragma mark------所有设置中只计算一次缩放比例
 - (void)AutoSizeScale{
-    
     _autoSizeScaleX = ScreenWidthLFL/RealUISrceenWidth;
     _autoSizeScaleY = ScreenHightLFL/RealUISrceenHight;
 }
