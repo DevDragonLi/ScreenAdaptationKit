@@ -2,7 +2,7 @@
  The File Name：FrameAutoScaleLFL.m
  The Creator  ：Created by DragonLi
  Creation Time：On 15/11/14.
- Copyright    ：  Copyright © 2015年 李夫龙. All rights reserved.
+ Copyright    ：  Copyright © 2015年 DragonLi. All rights reserved.
  File Content Description：
  */
 

@@ -1,4 +1,22 @@
 # ScreenAdaptation-Rapid- DragonLi
+## 2016年3.20号更新
+###1. 加入头文件FrameMainLFL.h 导入这个即可
+###2. 头文件定义了一系列宏,更方便设置,详见demo
+```objc
+//    1.frame
+//    RectMake_LFL(<#X_LFL#>, <#Y_LFL#>, <#WIDTH_LFL#>, <#HEIGHT_LFL#>)
+RectMake_LFL(20, 20, 100, 100);
+//    2. point
+//    PointMake_LFL(<#X_LFL#>, <#Y_LFL#>)
+PointMake_LFL(30, 30);
+//    3. Size
+//    SizeMake_LFL(<#WIDTH_LFL#>, <#HEIGHT_LFL#>)
+SizeMake_LFL(60, 60);
+//  4. edgeInsets
+//    EdgeInsets_LFL(<#X_LFL#>, <#Y_LFL#>, <#WIDTH_LFL#>, <#HEIGHT_LFL#>)
+EdgeInsets_LFL(10, 0, 10, 0);
+
+```
 ## 2016年3.5号更新
 ###1. 修正部分接口
 ###2. 减少代码多余的框架,演示代码修改.

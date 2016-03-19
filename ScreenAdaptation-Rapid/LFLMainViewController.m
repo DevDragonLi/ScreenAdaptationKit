@@ -6,8 +6,7 @@
 //  Copyright © 2016年 李夫龙. All rights reserved.
 //
 #import "LFLMainViewController.h"
-#import "FrameAutoScaleLFL.h"
-
+#import "FrameMainLFL.h"
 @interface LFLMainViewController ()
 
 @end
@@ -16,8 +15,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.view.backgroundColor = [UIColor whiteColor];
-    #pragma mark    1.1普通使用 以下测试。请切换模拟器查看打印数据对比 是否等比例缩放 iPhone4s -6sPlus 如果公司UI图是以iphone6为基准, 直接写UI图上的坐标即可,如果其他尺寸,进入FrameAutoScaleLFL.h文件头文件修改RealUISrceenHight 和RealUISrceenWidth 为其他尺寸即可.
+    #pragma mark    1.1普通使用 以下测试。请切换模拟器查看打印数据对比 是否等比例缩放 iPhone4s -6sPlus 如果公司UI图是以iphone6为基准, 直接写UI图上的坐标即可,如果其他尺寸,进入FrameMainLFL.h文件头文件修改RealUISrceenHight 和RealUISrceenWidth 为其他尺寸即可.
     /**
      1.1 Eg: [FrameAutoScaleLFL CGLFLMakeX:30 Y:300 width:200 height:40]
      setting a view Frame With the UIfigure  number  all value will be size to fit UIScreen
@@ -39,6 +39,9 @@
 //    1.3  其他CGSize CGPoint代码演示
     [self otherMethodExample];
     
+//    1.4 宏定义设置,去掉了调用的系统CG ,更方便打出宏,
+    [self MacroUse];
+
 #pragma mark ---2. 关于storyBorad xib 的还未完善解决.
 //  1.storyBorad  (填入对应storyBorad 类名即可)
 //  2. xib 类名 testXib.xib
@@ -138,6 +141,23 @@
     LFLog(@"CGPoint%@",NSStringFromCGPoint(SV.center));
 }
 
+/**
+ MacroUse 已经全部进行缩放处理
+ */
+- (void)MacroUse{
+//    1.frame
+//    RectMake_LFL(<#X_LFL#>, <#Y_LFL#>, <#WIDTH_LFL#>, <#HEIGHT_LFL#>)
+    RectMake_LFL(20, 20, 100, 100);
+//    2. point
+//    PointMake_LFL(<#X_LFL#>, <#Y_LFL#>)
+    PointMake_LFL(30, 30);
+//    3. Size
+//    SizeMake_LFL(<#WIDTH_LFL#>, <#HEIGHT_LFL#>)
+    SizeMake_LFL(60, 60);
+//  4. edgeInsets
+//    EdgeInsets_LFL(<#X_LFL#>, <#Y_LFL#>, <#WIDTH_LFL#>, <#HEIGHT_LFL#>)
+    EdgeInsets_LFL(10, 0, 10, 0);
+}
 /**
  *  @author iOS_DragonLi
  *   根据宽度和字体计算label所占高度

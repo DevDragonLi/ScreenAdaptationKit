@@ -31,6 +31,7 @@
 		43F57F551C78D31100AFC2DC /* FrameAutoScaleLFL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrameAutoScaleLFL.h; sourceTree = "<group>"; };
 		43F57F561C78D31100AFC2DC /* FrameAutoScaleLFL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrameAutoScaleLFL.m; sourceTree = "<group>"; };
 		43F57F581C78D3E300AFC2DC /* info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = info.plist; path = "ScreenAdaptation-Rapid/info.plist"; sourceTree = SOURCE_ROOT; };
+		43F7878C1C9DD2B800364B34 /* FrameMainLFL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FrameMainLFL.h; sourceTree = "<group>"; };
 		87725DB81BF6513A00BD3569 /* ScreenAdaptation-Rapid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ScreenAdaptation-Rapid.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -58,6 +59,7 @@
 		4337B1E51C51D4AC007CDB1C /* FrameAutoScaleLFL */ = {
 			isa = PBXGroup;
 			children = (
+				43F7878C1C9DD2B800364B34 /* FrameMainLFL.h */,
 				43F57F551C78D31100AFC2DC /* FrameAutoScaleLFL.h */,
 				43F57F561C78D31100AFC2DC /* FrameAutoScaleLFL.m */,
 			);
@@ -67,6 +69,7 @@
 		4337B1EC1C51FB0F007CDB1C /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				43B76DA51C53B88000DCFA3D /* xib */,
 				4337B1D21C51D470007CDB1C /* AppDelegate.h */,
 				4337B1D31C51D470007CDB1C /* AppDelegate.m */,
 			);
@@ -100,7 +103,6 @@
 		87725DBA1BF6513A00BD3569 /* ScreenAdaptation-Rapid */ = {
 			isa = PBXGroup;
 			children = (
-				43B76DA51C53B88000DCFA3D /* xib */,
 				4337B1E51C51D4AC007CDB1C /* FrameAutoScaleLFL */,
 				4337B1EE1C520053007CDB1C /* LFLMainViewController.h */,
 				4337B1ED1C520053007CDB1C /* LFLMainViewController.m */,
