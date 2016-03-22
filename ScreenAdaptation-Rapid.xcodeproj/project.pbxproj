@@ -155,7 +155,6 @@
 				TargetAttributes = {
 					87725DB71BF6513A00BD3569 = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = FNCPC67LST;
 					};
 				};
 			};
@@ -310,6 +309,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "ScreenAdaptation-Rapid/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -323,6 +323,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "ScreenAdaptation-Rapid/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
