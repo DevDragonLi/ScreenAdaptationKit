@@ -14,6 +14,7 @@
 + (FrameAutoScaleLFL*)sharedFrameAutoScaleLFL;
 
 #pragma mark-----------Commonly used method
+
 #pragma mark             CGRect
 /**
  setting a view Frame With the UIfigure  number  all value will be size to fit UIScreen

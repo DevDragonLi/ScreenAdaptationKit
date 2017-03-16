@@ -15,32 +15,43 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.view.backgroundColor = [UIColor whiteColor];
-    #pragma mark    1.1普通使用 以下测试。请切换模拟器查看打印数据对比 是否等比例缩放 iPhone4s -6sPlus 如果公司UI图是以iphone6为基准, 直接写UI图上的坐标即可,如果其他尺寸,进入FrameMainLFL.h文件头文件修改RealUISrceenHight 和RealUISrceenWidth 为其他尺寸即可.
+#pragma mark    1.1普通使用 以下测试。请切换模拟器查看打印数据对比 是否等比例缩放  iPhone4s -6sPlus 如果公司UI图是以iphone6为基准, 直接写UI图上的坐标即可,如果其他尺寸,进入FrameMainLFL.h文件头文件修改RealUISrceenHight 和RealUISrceenWidth 为其他尺寸即可.
+    
     /**
      1.1 Eg: [FrameAutoScaleLFL CGLFLMakeX:30 Y:300 width:200 height:40]
      setting a view Frame With the UIfigure  number  all value will be size to fit UIScreen
      全部对应数值都将按照比例缩放返回一个进过处理缩放比例的frame.
      */
-    [self normallysettingAviewFrame];
+//    [self normallysettingAviewFrame];
+    UIView *view =[[UIView alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
+    view.backgroundColor =[UIColor redColor];
+    view.layer.masksToBounds = YES;
+    view.layer.cornerRadius = 55;
+    view.frame = RectMake_LFL(100, 100, 100, 100);
+    
+    [self.view addSubview:view];
+    
+    NSLog(@"%@",NSStringFromCGRect(view.frame));
+    
+    
     
     /**
      1.2 Eg:[FrameAutoScaleLFL CGLFLMakeX:20 CGRectGetX:CGRectGetMaxY(lable_LFL1.frame) width:300 height:30]
      setting a view Frame With the UIfigure number special CGRectGetY
      全部对应数值都将按照比例缩放而X / Y参数除外的frame.eg: 获取上个控件的Y,不可以再次缩放.或者x一直都为固定值.
      */
-    [self specialCGRectGetXorYValue];
+//    [self specialCGRectGetXorYValue];
     /**
      1.2.2 setting a view Frame With the UIfigure number special height eg: 64  always 64 Value
      比如导航栏的高度,一直不变,或者设置固定的高度,可以使用
      */
-    [self navigationUIExample];
+//    [self navigationUIExample];
 //    1.3  其他CGSize CGPoint代码演示
-    [self otherMethodExample];
+//    [self otherMethodExample];
     
 //    1.4 宏定义设置,去掉了调用的系统CG ,更方便打出宏,
-    [self MacroUse];
+//    [self MacroUse];
 
 #pragma mark ---2. 关于storyBorad xib 的还未完善解决.
 //  1.storyBorad  (填入对应storyBorad 类名即可)
@@ -73,7 +84,7 @@
     [self.view addSubview:lable_LFL];
     /**
      4/4s   :   {25 215}, {170 28}
-     5/5s   :   {25 255}, {170 34}
+     5/5s   :   {25 256}, {170 34}
      6/6s   :   {30 300}, {200 40}
      6p/6sp :   {33 331}, {220 44}
      */

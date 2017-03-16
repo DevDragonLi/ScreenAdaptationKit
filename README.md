@@ -1,8 +1,10 @@
-# ScreenAdaptation-Rapid
+# ScreenAdaptation-Rapid 后期不再维护
 
-## 1. Installation 
+				    RectMake_LFL经过测试无问题
+				    
+## 1. Installation   
 
-###1.1   With [CocoaPods](http://cocoapods.org), add this line to your Podfile.
+###1.1   With [CocoaPods](http://cocoapods.org), add this line to your Podfile. (这个是早期版本,最新版需要手动加入项目,未传CocoaPods)
 
 ```
 pod 'ScreenCompatible_LFL', '~> 1.0.0'
@@ -10,7 +12,7 @@ pod 'ScreenCompatible_LFL', '~> 1.0.0'
 pod install 
 
 ```
-###1.2  也可以下载源码后把FrameAutoScaleLFL文件夹直接拖入工程即可,建议 使用pod
+###1.2推荐方式:下载源码后把FrameAutoScaleLFL文件夹直接拖入工程即可,建议 使用pod
 
 ###1.3 如果发现使用后代码适配依旧有问题，请检查你的工程中，启动图片是否完整，如果启动图片不完整，默认最大图片尺寸为屏幕尺寸.
 
@@ -119,6 +121,10 @@ view.frame = RectMake_LFL(0,0, 100, 100);
 ```
 
 ## 更新日志部分
+
+### 2017年3.16号更新
+###  last update  
+
 ### 2016年3.5号更新
 ###1. 修正部分接口
 ###2. 减少代码多余的框架,演示代码修改.

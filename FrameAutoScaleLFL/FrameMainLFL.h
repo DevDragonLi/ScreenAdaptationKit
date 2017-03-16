@@ -5,17 +5,24 @@
 //  Created by vintop_xiaowei on 16/3/20.
 //  Copyright © 2016年 DragonLi. All rights reserved.
 /**
- 1.1 如果工程文件多处使用的话，最好在pch文件中导入#import "FrameMainLFL.h"
+ 1.1 如果工程文件多处使用的话，最好在pch文件中导入
+
+ #import "FrameMainLFL.h"
+ 
  1.2 说明可以设置 CGRect CGPoint  CGSize
+ 
  label_LFL.frame =[FrameAutoScaleLFL CGLFLMakeX:100 Y:0 width:100 height:100];
  label_LFL.frame.size = [FrameAutoScaleLFL CGSizeLFLMakeMainScreenSize];
  label_LFL.frame.origin= [FrameAutoScaleLFL CGLFLPointMakeX:200 Y:200];
  其他详细说明参考文件中readme或者demo代码即可.
- https://github.com/LFL2018/ScreenAdaptation-Rapid
+    https://github.com/DevDragonLi/ScreenAdaptation-Rapid
+ 
  1.3.如果觉得不错,希望给个star ,谢谢.
  */
+
 #ifndef FrameMainLFL_h
 #define FrameMainLFL_h
+
 #define ScreenWidthLFL CGRectGetMaxX([UIScreen mainScreen].bounds)
 #define ScreenHightLFL CGRectGetMaxY([UIScreen mainScreen].bounds)
 
@@ -30,6 +37,7 @@ static const float  RealUISrceenHight =  667.0;
 static const float RealUISrceenWidth = 375.0;
 
 #import "FrameAutoScaleLFL.h"
+
 #pragma mark 一系列宏定义,快速设置frame等
 /**
  [FrameAutoScaleLFL CGLFLMakeX:20 CGRectGetX:CGRectGetMaxY(detailUI.frame) width:300 height:30]

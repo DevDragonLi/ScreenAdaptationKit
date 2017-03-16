@@ -9,8 +9,11 @@
 #import "FrameAutoScaleLFL.h"
 
 @interface FrameAutoScaleLFL ()
+
 @property (nonatomic ,assign)float autoSizeScaleX;/**< 宽度缩放的比例  */
-@property (nonatomic ,assign)float autoSizeScaleY;/**< 高度缩放的比例  */
+
+//@property (nonatomic ,assign)float autoSizeScaleY;/**< 高度缩放的比例  */
+
 @end
 
 @implementation FrameAutoScaleLFL
@@ -96,7 +99,7 @@ static bool isFirstAccess = YES;
  全部对应数值都将按照比例缩放而Y参数除外的frame.eg: 获取上个控件的Y,不可以再次缩放.
  */
 + (CGRect)CGLFLMakeX:(CGFloat) x CGRectGetY:(CGFloat) GetY width:(CGFloat) width height:(CGFloat) height{
-    CGFloat CGRectGetY = [FrameAutoScaleLFL sharedFrameAutoScaleLFL].autoSizeScaleY;
+    CGFloat CGRectGetY = [FrameAutoScaleLFL sharedFrameAutoScaleLFL].autoSizeScaleX;
     return CGLFLMake(x, GetY / CGRectGetY, width, height);
 }
 /**
@@ -111,7 +114,7 @@ static bool isFirstAccess = YES;
  比如导航栏的高度,一直不变,或者设置固定的高度,可以使用.
  */
 + (CGRect)CGLFLMakeX:(CGFloat) x Y:(CGFloat) y  width:(CGFloat) width heightAllSame:(CGFloat) heightAllSame{
-    CGFloat heightValue_LFL = [FrameAutoScaleLFL sharedFrameAutoScaleLFL].autoSizeScaleY;
+    CGFloat heightValue_LFL = [FrameAutoScaleLFL sharedFrameAutoScaleLFL].autoSizeScaleX;
     return CGLFLMake(x, y, width,heightAllSame / heightValue_LFL);
 }
 
@@ -147,9 +150,9 @@ CGLFLMake(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
     FrameAutoScaleLFL *LFL = [FrameAutoScaleLFL sharedFrameAutoScaleLFL];
     CGRect rect;
     rect.origin.x = x *LFL.autoSizeScaleX;
-    rect.origin.y = y * LFL.autoSizeScaleY;
+    rect.origin.y = y * LFL.autoSizeScaleX;
     rect.size.width = width * LFL.autoSizeScaleX;
-    rect.size.height = height * LFL.autoSizeScaleY;
+    rect.size.height = height * LFL.autoSizeScaleX;
     return rect;
 }
 /**
@@ -161,7 +164,7 @@ CGPointLFLMake(CGFloat x, CGFloat y)
     FrameAutoScaleLFL *LFL = [FrameAutoScaleLFL sharedFrameAutoScaleLFL];
     CGPoint pointLFL;
     pointLFL.x = x * LFL.autoSizeScaleX;
-    pointLFL.y = y * LFL.autoSizeScaleY;
+    pointLFL.y = y * LFL.autoSizeScaleX;
     return pointLFL;
 }
 /**
@@ -173,13 +176,13 @@ CGSizeLFLMake(CGFloat width, CGFloat height)
     FrameAutoScaleLFL *LFL = [FrameAutoScaleLFL sharedFrameAutoScaleLFL];
     CGSize sizeLFL;
     sizeLFL.width = width* LFL.autoSizeScaleX;
-    sizeLFL.height = height* LFL.autoSizeScaleY;
+    sizeLFL.height = height* LFL.autoSizeScaleX;
     return sizeLFL;
 }
 
-#pragma mark------所有设置中只计算一次缩放比例
+#pragma mark------所有设置中只计算一次缩放比例  只采用  x缩放计算  放弃x和y同时
 - (void)AutoSizeScale{
     _autoSizeScaleX = ScreenWidthLFL/RealUISrceenWidth;
-    _autoSizeScaleY = ScreenHightLFL/RealUISrceenHight;
+//    _autoSizeScaleY = ScreenHightLFL/RealUISrceenHight;
 }
 @end
