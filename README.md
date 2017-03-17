@@ -1,6 +1,17 @@
-# ScreenAdaptation-Rapid 后期不再维护
+# ScreenAdaptation-Rapid 
 
-				    RectMake_LFL经过测试无问题
+## 已上线项目采取此库适配APP:
+
+
+- 中国文化与艺术
+- Aparty   
+
+- 其他未知名字  
+
+
+
+
+				    RectMake_LFL经过测试缩放变形无问题
 				    
 ## 1. Installation   
 
