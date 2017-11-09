@@ -15,7 +15,7 @@
 				    
 ## 1. Installation   
 
-###1.1   With [CocoaPods](http://cocoapods.org), add this line to your Podfile. (这个是早期版本,最新版需要手动加入项目,未传CocoaPods)
+### 1.1   With [CocoaPods](http://cocoapods.org), add this line to your Podfile. (这个是早期版本,最新版需要手动加入项目,未传CocoaPods)
 
 ```
 pod 'ScreenCompatible_LFL', '~> 1.0.0'
@@ -23,13 +23,13 @@ pod 'ScreenCompatible_LFL', '~> 1.0.0'
 pod install 
 
 ```
-###1.2推荐方式:下载源码后把FrameAutoScaleLFL文件夹直接拖入工程即可,建议 使用pod
+### 1.2推荐方式:下载源码后把FrameAutoScaleLFL文件夹直接拖入工程即可,建议 使用pod
 
-###1.3 如果发现使用后代码适配依旧有问题，请检查你的工程中，启动图片是否完整，如果启动图片不完整，默认最大图片尺寸为屏幕尺寸.
+### 1.3 如果发现使用后代码适配依旧有问题，请检查你的工程中，启动图片是否完整，如果启动图片不完整，默认最大图片尺寸为屏幕尺寸.
 
-##2.代码演示部分
+## 2.代码演示部分
 
-###2.1 使用宏布局,框架定义了一系列宏,更方便设置,详见demo
+### 2.1 使用宏布局,框架定义了一系列宏,更方便设置,详见demo
 
 ```objc
 // 2016年3.20号更新  
@@ -88,7 +88,7 @@ label_LFL.frame =[FrameAutoScaleLFL CGLFLMakeX:100 Y:0 width:100 height:100];
 label_LFL.frame.size = [FrameAutoScaleLFL CGSizeLFLMakeMainScreenSize];
 label_LFL.frame.origin= [FrameAutoScaleLFL CGLFLPointMakeX:200 Y:200];
 ```
-##3  对比masonry测试耗时,创建view控件100个,同样位置大小,测试次数三次,相比较而言,对于简单布局,采取frame效率很好.(不同项目要求不同,可以搭配使用).
+## 3  对比masonry测试耗时,创建view控件100个,同样位置大小,测试次数三次,相比较而言,对于简单布局,采取frame效率很好.(不同项目要求不同,可以搭配使用).
 
 ```objc
 - (void)viewDidLoad {
@@ -134,35 +134,35 @@ view.frame = RectMake_LFL(0,0, 100, 100);
 ## 更新日志部分
 
 ### 2017年3.16号更新
-###  last update  
+####  last update  
 
 ### 2016年3.5号更新
-###1. 修正部分接口
-###2. 减少代码多余的框架,演示代码修改.
+#### 1. 修正部分接口
+#### 2. 减少代码多余的框架,演示代码修改.
 
 ### 2016年2月19-21更新简介
-###1. 增加如果布局中有涉及设置导航栏和使用CGRectGetMaxY() CGRectGetMaxX等导致再次缩放的问题,提供新API方法,eg:长文本无法获取具体Y点,需要通过CGRectGetMaxY()方式,如果使用之前方法,会导致y数值二次缩放,导致出错.代码调整,便于查看demo
+#### 1. 增加如果布局中有涉及设置导航栏和使用CGRectGetMaxY() CGRectGetMaxX等导致再次缩放的问题,提供新API方法,eg:长文本无法获取具体Y点,需要通过CGRectGetMaxY()方式,如果使用之前方法,会导致y数值二次缩放,导致出错.代码调整,便于查看demo
 
 ### 2016年1月23更新简介
 
-### 一.更新可视化的storyBoard和xib中得view自动适配方法,参考demo代码,一行搞定!,布局控件时可以(按照UI手机型号)尺寸布局,布局完成后,Size选择Freeform即可,可以自行测试.
-### 二.修改屏幕宽高的宏定义名字,避免和项目中的重名
+#### 一.更新可视化的storyBoard和xib中得view自动适配方法,参考demo代码,一行搞定!,布局控件时可以(按照UI手机型号)尺寸布局,布局完成后,Size选择Freeform即可,可以自行测试.
+#### 二.修改屏幕宽高的宏定义名字,避免和项目中的重名
 
 
 ### 2016年1月22更新简介
-### 一. 适配4s-6sp全机型(之前适配到5而已,网上缩放适配也都是到5)
-### 二.虽然代码适配网上有masonry,但是有的确实也比较麻烦点,对于一般公司项目中UI图,可以使用本框架直接设置即可,简单.
+#### 一. 适配4s-6sp全机型(之前适配到5而已,网上缩放适配也都是到5)
+####  二.虽然代码适配网上有masonry,但是有的确实也比较麻烦点,对于一般公司项目中UI图,可以使用本框架直接设置即可,简单.
 
 
 ### 2015年11月14日更新说明
-### 控件设置坐标时 如下写即可 ,直接调用类方法设置,eg: CGRect CGPoint  CGSize
+#### 控件设置坐标时 如下写即可 ,直接调用类方法设置,eg: CGRect CGPoint  CGSize
 
 ## 4. 参考资料和其他
 
-### 1. https://www.zhihu.com/question/25421514
+#### 1. https://www.zhihu.com/question/25421514
 
-### 2. http://blog.csdn.net/phunxm/article/details/42174937
+#### 2. http://blog.csdn.net/phunxm/article/details/42174937
 
-### 3. 有任何问题，请及时 issues me
+#### 3. 有任何问题，请及时 issues me
 
 Email:  dragonli_52171@163.com
